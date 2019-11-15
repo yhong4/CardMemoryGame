@@ -1,0 +1,10 @@
+@import "~normalize.css";
+
+@import "variables";
+@import "font";
+
+@import "grid";
+@import "global";
+
+@import "../components/Memorai/Cards/Cards.scss";
+@import "../components//Memorai//CardGame/CardGame.scss";
