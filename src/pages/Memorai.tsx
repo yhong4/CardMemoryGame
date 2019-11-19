@@ -5,7 +5,7 @@ export default function Memorai() {
     return (
         <>
             {
-                CardGame(24)
+                CardGame(12)
             }
         </>
     )

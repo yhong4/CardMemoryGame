@@ -1,10 +1,10 @@
 $card-border-radius: 15px;
+$animation-duration: .2s;
+$accent-color: #1053ff;
+$dark-color: #1e2021;
 
 @mixin border-radius($radius) {
     border-radius: $radius;
-    @include media-breakpoint-down(md) {
-        border-radius: $radius / 3;
-    }
 }
 
 .card-container, .card, .card .side {
@@ -23,37 +23,22 @@ $card-border-radius: 15px;
     transform-style: preserve-3d;
     box-shadow: 0 0 3px rgba(black, .15);
     border: 2px solid #bababa;
-    
-    .side {
-        backface-visibility: hidden;
-        @include border-radius($card-border-radius - 2);
-    }
+}
 
-    .back {
-        transform: rotateY(180deg);
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, #1fa5ff 25%, #1053ff 25%, #1053ff 50%, #1fa5ff 50%, #1fa5ff 75%, #1053ff 75%, #1053ff 100%);
-        background-size: 56px 56px;
-        &::before, &::after {
-            @include border-radius($card-border-radius - 2);
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(#20E4A4, #2CC9CC);
-            opacity: .8;
-        }
-        &::after {
-            opacity: 0;
-            transition: opacity $animation-duration * 2;
-        }
-    }
+.side {
+    backface-visibility: hidden;
+    @include border-radius($card-border-radius - 2);
+}
+
+.back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #1fa5ff 25%, #1053ff 25%, #1053ff 50%, #1fa5ff 50%, #1fa5ff 75%, #1053ff 75%, #1053ff 100%);
+    background-size: 56px 56px;
 }
 
 .card-container:hover .card {
